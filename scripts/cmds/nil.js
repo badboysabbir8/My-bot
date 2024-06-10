@@ -1,6 +1,6 @@
 module.exports = {
     config: {
-        name: "ayan",
+        name: "Nil",
         version: "1.0",
         author: "MR.AYAN", //** original author fb I'd : https://m.me/MR.AYAN.2X **//
         countDown: 5,
@@ -15,6 +15,6 @@ onChat: async function({
     message,
     getLang
 }) {
-    if (event.body && event.body.toLowerCase() == "ayan") return message.reply("আমাকে বলতে পারেন বস ঘুমাইছে-!!🥀");
+    if (event.body && event.body.toLowerCase() == "nil","Nil","XNIL","@Nil") return message.reply("আমাকে বলতে পারেন বস ঘুমাইছে-!!🥀");
 }
 }; 
