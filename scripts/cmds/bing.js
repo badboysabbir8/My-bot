@@ -1,60 +1,54 @@
-const fs = require("fs-extra");
-const axios = require("axios");
-const path = require("path");
-
-const cookie = "1u0Sez6VsjT0T33izsBOo9AVmEHtvQSVyAC_FOBQhDyVY6gNR0LXWrcVvBC7js0YpIxTTnmq9i5HEnyK6HeYh0KoWNbCnOgb12LoBu0lYrLJ6D6B_dUD35Y6X09DdaTHHYYbXn5GKwY6CF4F8nnjsRdqw7o_hpw1ia8UT6zeD9LHS363VjWozVachWGx11ZVfvYH9e95AQ8P-UI3qXzUB3qVGtXHgWi-LzHVi_3kyFT4"; // Enter _U value.
-const auth = "https://tinyurl.com/4ctrj6y7"; // Enter KievRPSSecAuth value.
+.cmd install 00bing.js const axios = require('axios');
+const fs = require('fs-extra');
+const path = require('path');
 
 module.exports = {
   config: {
-    name: "bing",
+    name: "dalle3",
+    aliases: ["dalle","bing","create","imagine"],
     version: "1.0",
-    author: "MR.AYAN", //**full coding MR.AYAN but api rahat**//
+    author: "Dipto",
+    countDown: 15,
     role: 0,
-    countDown: 0,
-    longDescription: {
-      en: "Generate unique and captivating images using DALL-E 3"
-    },
-    category: "ai",
+    shortDescription: "Generate images powerby by Dalle3",
+    longDescription: "Generate images by Unofficial Dalle3",
+    category: "download",
     guide: {
-      en: "{pn} <prompt>"
+      en: "{pn} prompt"
     }
   },
 
-  onStart: async function ({ api, event, args, message }) {
-    const prompt = args.join(" ");
-    if (!prompt) {
-      message.reply("📝 Enter your bing coding→📁");
-      return;
-    }
-    message.reply("𝐏𝐥𝐞𝐚𝐬𝐞 𝐰𝐚𝐢𝐭 𝐰𝐡𝐢𝐥𝐞 𝐩𝐫𝐨𝐜𝐞𝐬𝐬𝐢𝐧𝐠...⏳");
-
+  onStart: async function ({ api, event, args }) {
+  const prompt = event.messageReply?.body.split("dalle")[1] ||  args.join(" ");
+  if (!prompt) {
+   return api.sendMessage("❌| Wrong Formet .✅ | Use 17/18 years old boy/girl watching football match on tv and written Dipto and 69 on the back of his Dress , 4k",event.threadID,event.messageID);
+  }
     try {
-      const res = await axios.post(`https://rehatdesu.xyz/api/imagine/dalle?cookie=${cookie}&auth=${auth}&prompt=${encodeURIComponent(prompt)}`);
-      const data = res.data.results.images;
+      const fff = ["1wFVcn7gqiAXxkid2zhUh2O9kuxhAl4qUJUPqPbrkoVJ2lDyNCCz3Lp-nJH_zGByhscXFWs8ctWRl9iqhuIl2taub04ffT4wuB1fH5IWF88UqmyHqVoZyhPUQ9u2necHkO1kSKoTN4BZkic0jpQY5tlv9WFOAEbnmviZejMOTqQ4t42dytybdqkgOdCUEDoOcMjhjF_N_G_rIUmz44fZRpQ"]
+        const col = fff[Math.floor(Math.random() * fff.length)]
+      const w = await api.sendMessage("Wait koro baby < 😽", event.threadID);
 
+const response = await axios.get(`https://xnil-dalle.onrender.com/gen?prompt=${prompt}&cookie=${col}`)
+      const data = response.data.img;
       if (!data || data.length === 0) {
-        message.reply("🔐 | Sorry I can't accept it...");
-        return;
+        api.sendMessage("Empty response or no images generated.",event.threadID,event.messageID);
       }
-
-      const imgData = [];
-      for (let i = 0; i < Math.min(4, data.length); i++) {
-        const imgResponse = await axios.get(data[i].url, { responseType: 'arraybuffer' });
+      const diptoo = [];
+      for (let i = 0; i < data.length; i++) {
+        const imgUrl = data[i];
+        const imgResponse = await axios.get(imgUrl, { responseType: 'arraybuffer' });
         const imgPath = path.join(__dirname, 'cache', `${i + 1}.jpg`);
         await fs.outputFile(imgPath, imgResponse.data);
-        imgData.push(fs.createReadStream(imgPath));
+        diptoo.push(fs.createReadStream(imgPath));
       }
-
+      await api.unsendMessage(w.messageID);
       await api.sendMessage({
-        attachment: imgData,
-      }, event.threadID, event.messageID);
-
+  body: `✅ | Here's Your Generated Photo<😘`,
+        attachment: diptoo
+      },event.threadID, event.messageID);
     } catch (error) {
       console.error(error);
-      message.reply("🔐 | Sorry I can't accept it..");
-    } finally {
-      await fs.remove(path.join(__dirname, 'cache'));
+      await api.sendMessage(`Generation failed!\nError: ${error.message}`,event.threadID, event.messageID);
     }
   }
-} 
+}
