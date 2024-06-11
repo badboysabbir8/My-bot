@@ -21,7 +21,7 @@ module.exports = {
   onStart: async function ({ api, event, args }) {
   const prompt = event.messageReply?.body.split("dalle")[1] ||  args.join(" ");
   if (!prompt) {
-   return api.sendMessage("❌| Wrong Formet .✅ | Use 17/18 years old boy/girl watching football match on tv and written Dipto and 69 on the back of his Dress , 4k",event.threadID,event.messageID);
+   return api.sendMessage("❌| Wrong Formet .✅ | Use 17/18 years old boy/girl watching football match on tv and written Xnil and 69 on the back of his Dress , 4k",event.threadID,event.messageID);
   }
     try {
       const fff = ["1wFVcn7gqiAXxkid2zhUh2O9kuxhAl4qUJUPqPbrkoVJ2lDyNCCz3Lp-nJH_zGByhscXFWs8ctWRl9iqhuIl2taub04ffT4wuB1fH5IWF88UqmyHqVoZyhPUQ9u2necHkO1kSKoTN4BZkic0jpQY5tlv9WFOAEbnmviZejMOTqQ4t42dytybdqkgOdCUEDoOcMjhjF_N_G_rIUmz44fZRpQ"]
