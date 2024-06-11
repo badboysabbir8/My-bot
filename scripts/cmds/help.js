@@ -3,13 +3,13 @@ const axios = require("axios");
 const path = require("path");
 const { getPrefix } = global.utils;
 const { commands, aliases } = global.GoatBot;
-const doNotDelete = "[ 🌟 | 𝗔𝗬𝗔𝗡-𝗕𝗢𝗧 ]";
+const doNotDelete = "[ ❤ | 𝙓𝙉𝙞𝙇-𝘽𝙊𝙏 ]";
 
 module.exports = {
   config: {
     name: "help",
     version: "1.17",
-    author: "MR.AYAN", //**orginal author fb I'd : https://m.me/NOOBS.DEVELOPER.AYAN **//
+    author: "ntkhang",
     countDown: 5,
     role: 0,
     shortDescription: {
@@ -34,7 +34,7 @@ module.exports = {
       const categories = {};
       let msg = "";
 
-      msg += `╔═══════════╗\n     𝗔𝗬𝗔𝗡-𝗕𝗢𝗧🌟\n╚═══════════╝`;
+      msg += `╔═══════════╗\n  𝙓𝙉𝙞𝙇-𝘽𝙊𝙏  \n╚═══════════╝`;
 
       for (const [name, value] of commands) {
           if (value.config.role > 1 && role < value.config.role) continue;
@@ -60,16 +60,16 @@ module.exports = {
 
       const totalCommands = commands.size;
       msg += `\n𝗖𝘂𝗿𝗿𝗲𝗻𝘁𝗹𝘆, 𝘁𝗵𝗲 𝗯𝗼𝘁 𝗵𝗮𝘀 ${totalCommands} 𝗰𝗼𝗺𝗺𝗮𝗻𝗱𝘀 𝘁𝗵𝗮𝘁 𝗰𝗮𝗻 𝗯𝗲 𝘂𝘀𝗲𝗱\n`;
-      msg += `𝗧𝘆𝗽𝗲 ${prefix}𝗵𝗲𝗹𝗽 [𝗔𝗬𝗔𝗡-𝗕𝗢𝗧] 𝘁𝗼 𝘃𝗶𝗲𝘄 𝘁𝗵𝗲 𝗱𝗲𝘁𝗮𝗶𝗹𝘀 𝗼𝗳 𝘁𝗵𝗮𝘁 𝗰𝗼𝗺𝗺𝗮𝗻𝗱\n`;
-      msg += `🌟 | 𝗔𝗬𝗔𝗡-𝗕𝗢𝗧 `;
+      msg += `𝗧𝘆𝗽𝗲 ${prefix}𝗵𝗲𝗹𝗽 [𝙓𝙉𝙞𝙇-𝘽𝙊𝙏] 𝘁𝗼 𝘃𝗶𝗲𝘄 𝘁𝗵𝗲 𝗱𝗲𝘁𝗮𝗶𝗹𝘀 𝗼𝗳 𝘁𝗵𝗮𝘁 𝗰𝗼𝗺𝗺𝗮𝗻𝗱\n`;
+      msg += `♥️ |  `;
 
 
       const helpListImages = [
-        "https://i.postimg.cc/8cvDpt37/images-17.jpg", // add image link here
-        "https://i.postimg.cc/qq2VVghn/received-430815183006013.jpg",
-        "https://i.postimg.cc/KzRxVZDr/received-455361183700405.jpg",
-        "https://i.postimg.cc/MGZW70cL/received-435752262736007.jpg",
-        "https://i.postimg.cc/Pq6d2LY5/received-3200033873462285.jpg",
+        "https://i.imgur.com/MJkjD1z.jpeg", // add image link here
+        "",
+        "",
+        "",
+        "",
         // Add more image links as needed
       ];
 
@@ -99,7 +99,7 @@ module.exports = {
 
         const response = `━━━━━━━━━━━━━━━━━♡
    
-   ➢  ♡𝐍𝐀𝐌𝐄♡ 
+   ➢  🤖𝐍𝐀𝐌𝐄❤️
     ➠${configCommand.name}
    ➢ 𝙄𝙉𝙁𝙊
     
@@ -113,7 +113,7 @@ module.exports = {
    ➢ 𝙐𝙎𝘼𝙂𝙀
      ➠ ${usage}
    ➢ 𝙉𝙊𝙏𝙀𝙎
-    scripts coding by MR.AYAN
+    scripts coding by 𝙓𝙉𝙞𝙇-𝘽𝙊𝙏
   ━━━━━━━━━━━━━━━━━━ꔪ`;
 
         await message.reply(response);
