@@ -15,6 +15,6 @@ onChat: async function({
     message,
     getLang
 }) {
-    if (event.body && event.body.toLowerCase() == "bot") return message.reply("Ami bot na amr name mira-!!😑");
+    if (event.body && event.body.toLowerCase() == "bot") return message.reply(`type ${global.GoatBot.config.prefix}help`);
 }
 }; 

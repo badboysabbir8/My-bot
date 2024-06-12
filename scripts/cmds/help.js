@@ -65,13 +65,8 @@ module.exports = {
 
 
       const helpListImages = [
-        "https://i.imgur.com/MJkjD1z.jpeg", // add image link here
-        "",
-        "",
-        "",
-        "",
-        // Add more image links as needed
-      ];
+        "https://i.imgur.com/MJkjD1z.jpeg" // add image link here 
+        ];
 
 
       const helpListImage = helpListImages[Math.floor(Math.random() * helpListImages.length)];

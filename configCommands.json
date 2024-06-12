@@ -223,7 +223,8 @@
     },
     "aki": {
       "reward": 25
-    }
+    },
+    "info": {}
   },
   "envEvents": {
     "logsbot": {
@@ -242,6 +243,7 @@
     "0.js",
     "00ai.js",
     "gpt.js",
-    "prefix2.js"
+    "prefix2.js",
+    "tempmail.js"
   ]
 }
