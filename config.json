@@ -29,7 +29,7 @@
   "GENDER": "MALE",
   "nickNameBot": "𓆩X-NiL‣᭄𓆪-143🔥",
   "authorFB": "https://m.me/xnilxhowdhury143",
-  "prefix": ".",
+  "prefix": "/",
   "database": {
     "type": "sqlite",
     "uriMongodb": "",
